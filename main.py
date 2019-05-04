@@ -3,6 +3,7 @@ from os import system
 from time import sleep
 from typing import Iterable
 from clock import Clock
+from decimalclock import DecimalClock
 from kilosecondsclock import KiloSecondsClock
 from microdaysclock import MicroDaysClock
 from millidaysclock import MilliDaysClock
@@ -27,7 +28,8 @@ def print_clocks(clocks: Iterable[Clock]) -> None:
 
 if __name__ == "__main__":
     clocks = (TwentyFourHourClock(), TwelfHourClock(), SecondsClock(),
-              KiloSecondsClock(), MilliDaysClock(), MicroDaysClock())
+              KiloSecondsClock(), MilliDaysClock(), MicroDaysClock(),
+              DecimalClock())
     while True:
         print_clocks(clocks)
-        sleep(0.1)
+        sleep(0.05)
