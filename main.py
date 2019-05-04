@@ -3,6 +3,7 @@ from os import system
 from time import sleep
 from typing import Iterable
 from clock import Clock
+from secondsclock import SecondsClock
 from twelfhourclock import TwelfHourClock
 from twentyfourhourclock import TwentyFourHourClock
 
@@ -22,7 +23,7 @@ def print_clocks(clocks: Iterable[Clock]) -> None:
 
 
 if __name__ == "__main__":
-    clocks = (TwentyFourHourClock(), TwelfHourClock())
+    clocks = (TwentyFourHourClock(), TwelfHourClock(), SecondsClock())
     while True:
         print_clocks(clocks)
         sleep(0.1)
