@@ -7,6 +7,9 @@ MS_IN_HALFDAY = 12 * MS_IN_H
 
 
 class TwelfHourClock(Clock):
+    def name(self) -> str:
+        return "12h Clock"
+
     def format_time(self, ms_since_midnight: int) -> str:
         return f"{(ms_since_midnight % MS_IN_HALFDAY)// MS_IN_H}:" \
                 f"{(ms_since_midnight % MS_IN_H) // MS_IN_MIN}:" \

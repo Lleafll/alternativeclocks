@@ -19,11 +19,17 @@ def _get_milliseconds_since_midnight() -> int:
     return int(seconds_since_midnight * 1000)
 
 
-def _print_clocks(clocks: Iterable[Clock]) -> None:
+def _format_clocks(clocks: Iterable[Clock]) -> str:
     milliseconds_since_midnight = _get_milliseconds_since_midnight()
+    return "\n".join(f"{clock.name():<25}"
+                     f"{clock.format_time(milliseconds_since_midnight):^10}"
+                     for clock in clocks)
+
+
+def _print_clocks(clocks: Iterable[Clock]) -> None:
+    formatted_clocks = _format_clocks(clocks)
     system("cls")
-    for clock in clocks:
-        print(clock.format_time(milliseconds_since_midnight))
+    print(formatted_clocks)
 
 
 if __name__ == "__main__":
