@@ -19,7 +19,7 @@ def _get_milliseconds_since_midnight() -> int:
     return int(seconds_since_midnight * 1000)
 
 
-def print_clocks(clocks: Iterable[Clock]) -> None:
+def _print_clocks(clocks: Iterable[Clock]) -> None:
     milliseconds_since_midnight = _get_milliseconds_since_midnight()
     system("cls")
     for clock in clocks:
@@ -31,5 +31,5 @@ if __name__ == "__main__":
               KiloSecondsClock(), MilliDaysClock(), MicroDaysClock(),
               DecimalClock())
     while True:
-        print_clocks(clocks)
+        _print_clocks(clocks)
         sleep(0.05)
