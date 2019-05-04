@@ -7,7 +7,7 @@ MS_IN_MD = MS_IN_D // MD_IN_D
 
 class MilliDaysClock(Clock):
     def name(self) -> str:
-        return "Millidays-based clock"
+        return "Millidays-based Clock"
 
     def format_time(self, ms_since_midnight: int) -> str:
-        return f":{ms_since_midnight // MS_IN_MD:03d}"
+        return f"{ms_since_midnight // MS_IN_MD:03d}"
