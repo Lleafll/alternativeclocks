@@ -11,5 +11,5 @@ class MicroDaysClock(Clock):
         return "Microdays-based Clock"
 
     def format_time(self, ms_since_midnight: int) -> str:
-        return f":{ms_since_midnight // MS_IN_MD}:" \
-                f"{(ms_since_midnight % MS_IN_MD) // MS_IN_UD}"
+        return f":{ms_since_midnight // MS_IN_MD:03d}:" \
+                f"{(ms_since_midnight % MS_IN_MD) // MS_IN_UD:03d}"

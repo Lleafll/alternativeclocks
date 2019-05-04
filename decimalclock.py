@@ -13,5 +13,5 @@ class DecimalClock(Clock):
 
     def format_time(self, ms_since_midnight: int) -> str:
         return f"{ms_since_midnight // MS_IN_DH}:" \
-                f"{(ms_since_midnight % MS_IN_DH) // MS_IN_DM}:" \
-                f"{(ms_since_midnight % MS_IN_DM) // MS_IN_DS}"
+                f"{(ms_since_midnight % MS_IN_DH) // MS_IN_DM:02d}:" \
+                f"{(ms_since_midnight % MS_IN_DM) // MS_IN_DS:02d}"

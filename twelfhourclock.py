@@ -11,6 +11,6 @@ class TwelfHourClock(Clock):
         return "12h Clock"
 
     def format_time(self, ms_since_midnight: int) -> str:
-        return f"{(ms_since_midnight % MS_IN_HALFDAY)// MS_IN_H}:" \
-                f"{(ms_since_midnight % MS_IN_H) // MS_IN_MIN}:" \
-               f"{(ms_since_midnight % MS_IN_MIN) // MS_IN_S}"
+        return f"{(ms_since_midnight % MS_IN_HALFDAY)// MS_IN_H:02d}:" \
+                f"{(ms_since_midnight % MS_IN_H) // MS_IN_MIN:02d}:" \
+                f"{(ms_since_midnight % MS_IN_MIN) // MS_IN_S:02d}"
