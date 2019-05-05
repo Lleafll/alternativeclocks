@@ -6,6 +6,7 @@ from clock import Clock
 from decimalclock import DecimalClock
 from kilosecondsclock import KiloSecondsClock
 from microdaysclock import MicroDaysClock
+from microdayswakinghoursclock import MicroDaysWakingHoursClock
 from millidaysclock import MilliDaysClock
 from millidayswakinghoursclock import MilliDaysWakingHoursClock
 from reversewakinghoursclock import ReverseWakingHoursClock
@@ -39,7 +40,7 @@ if __name__ == "__main__":
     clocks = (TwentyFourHourClock(), TwelfHourClock(), SecondsClock(),
               KiloSecondsClock(), MilliDaysClock(), MicroDaysClock(),
               DecimalClock(), WakingHoursClock(), ReverseWakingHoursClock(),
-              MilliDaysWakingHoursClock())
+              MilliDaysWakingHoursClock(), MicroDaysWakingHoursClock())
     while True:
         _print_clocks(clocks)
         sleep(0.05)
