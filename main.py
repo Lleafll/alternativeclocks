@@ -10,6 +10,7 @@ from millidaysclock import MilliDaysClock
 from secondsclock import SecondsClock
 from twelfhourclock import TwelfHourClock
 from twentyfourhourclock import TwentyFourHourClock
+from wakinghoursclock import WakingHoursClock
 
 
 def _get_milliseconds_since_midnight() -> int:
@@ -35,7 +36,7 @@ def _print_clocks(clocks: Iterable[Clock]) -> None:
 if __name__ == "__main__":
     clocks = (TwentyFourHourClock(), TwelfHourClock(), SecondsClock(),
               KiloSecondsClock(), MilliDaysClock(), MicroDaysClock(),
-              DecimalClock())
+              DecimalClock(), WakingHoursClock())
     while True:
         _print_clocks(clocks)
         sleep(0.05)
