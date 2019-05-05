@@ -18,7 +18,7 @@ class ReverseWakingHoursClock(TwentyFourHourClock):
             ms_until_falling_asleep = DAY_END_IN_MS - ms_since_midnight
             return super().format_time(ms_until_falling_asleep)
         else:
-            if ms_since_midnight < DAY_END_IN_MS:
+            if ms_since_midnight < DAY_BEGIN_IN_MS:
                 ms_until_waking_up = DAY_BEGIN_IN_MS - ms_since_midnight
             else:
                 ms_until_waking_up = MS_IN_D - ms_since_midnight \
