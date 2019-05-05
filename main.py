@@ -1,4 +1,5 @@
 from datetime import datetime
+import os
 from os import system
 from time import sleep
 from typing import Iterable
@@ -32,7 +33,7 @@ def _format_clocks(clocks: Iterable[Clock]) -> str:
 
 def _print_clocks(clocks: Iterable[Clock]) -> None:
     formatted_clocks = _format_clocks(clocks)
-    system("cls")
+    system("cls" if os.name == "nt" else "clear")
     print(formatted_clocks)
 
 
