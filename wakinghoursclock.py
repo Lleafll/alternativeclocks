@@ -13,10 +13,14 @@ class WakingHoursClock(TwentyFourHourClock):
         return "Waking Hours Clock"
 
     def format_time(self, ms_since_midnight: int) -> str:
-        ms_since_wakeup = ms_since_midnight - DAY_BEGIN_IN_MS
-        if ms_since_wakeup >= 0:
+        if ms_since_midnight >= DAY_BEGIN_IN_MS \
+                and ms_since_midnight < DAY_END_IN_MS:
+            ms_since_wakeup = ms_since_midnight - DAY_BEGIN_IN_MS
             return super().format_time(ms_since_wakeup)
         else:
-            ms_since_falling_asleep = \
-                    ms_since_midnight + MS_IN_D - DAY_END_IN_MS
+            if ms_since_midnight < DAY_BEGIN_IN_MS:
+                ms_since_falling_asleep = ms_since_midnight + MS_IN_D \
+                        - DAY_END_IN_MS
+            else:
+                ms_since_falling_asleep = ms_since_midnight - DAY_END_IN_MS
             return f"-{super().format_time(ms_since_falling_asleep)}"
